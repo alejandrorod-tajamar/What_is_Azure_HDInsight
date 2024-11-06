@@ -14,6 +14,13 @@
   - [Escenarios de uso de HDInsight](#escenarios-de-uso-de-hdinsight)
     - [Procesamiento por lotes (ETL)](#procesamiento-por-lotes-etl)
     - [Almacenamiento de datos (Data Warehousing)](#almacenamiento-de-datos-data-warehousing)
+    - [Internet de las Cosas (IoT)](#internet-de-las-cosas-iot)
+    - [Híbrido](#híbrido)
+  - [Componentes de código abierto en HDInsight](#componentes-de-código-abierto-en-hdinsight)
+  - [Lenguajes de programación en HDInsight](#lenguajes-de-programación-en-hdinsight)
+  - [Herramientas de desarrollo para HDInsight](#herramientas-de-desarrollo-para-hdinsight)
+  - [Inteligencia empresarial (BI) en HDInsight](#inteligencia-empresarial-bi-en-hdinsight)
+  - [Residencia de datos en la región](#residencia-de-datos-en-la-región)
 
 **Azure HDInsight** es un servicio en la nube totalmente **administrado** y enfocado en **análisis de datos** para empresas. Este servicio permite usar herramientas y frameworks de **código abierto** como _Spark_, _Hive_, _LLAP_, _Kafka_, _Hadoop_ y otros en el entorno de Azure.
 
@@ -55,16 +62,65 @@ HDInsight ofrece diferentes tipos de clústeres que pueden ser personalizados, p
 
 > Un **pipeline** de datos es una cadena de procesos que mueve y transforma datos de un lugar a otro de manera automática.
 
+> Un **clúster** es un grupo de máquinas que trabajan juntas para procesar y almacenar grandes cantidades de datos de manera eficiente y rápida.
+
 ## Escenarios de uso de HDInsight
 
 Azure HDInsight se puede utilizar para diferentes escenarios de procesamiento de Big Data, tanto con datos históricos (ya recolectados y almacenados) como con datos en tiempo real (transmitidos directamente desde la fuente).
 
 ### Procesamiento por lotes (ETL)
 
-El proceso ETL (Extraer, Transformar y Cargar) consiste en extraer datos de diversas fuentes, transformarlos en un formato estructurado y luego cargarlos en un almacén de datos. Estos datos transformados se pueden usar para análisis de datos o almacenamiento de datos.
+El proceso _Extract, Transform, Load_ (ETL) consiste en extraer datos de diversas fuentes, transformarlos en un formato estructurado y luego cargarlos en un almacén de datos. Estos datos transformados se pueden usar para análisis de datos o almacenamiento de datos.
 
 ### Almacenamiento de datos (Data Warehousing)
 
 HDInsight permite realizar consultas interactivas a gran escala (hasta petabytes) sobre datos estructurados o no estructurados en cualquier formato. También es posible construir modelos y conectarlos a herramientas de inteligencia empresarial (BI).
 
-![alt text](image.png)
+![alt text](images/image.png)
+
+### Internet de las Cosas (IoT)
+
+HDInsight permite procesar datos que se reciben al instante desde dispositivos conectados, como parte del _Internet of Things_ (IoT).
+
+![alt text](images/image-1.png)
+
+### Híbrido
+
+HDInsight te permite conectar y mejorar tu infraestructura de Big Data local con las herramientas y recursos avanzados de análisis que ofrece la nube de Azure.
+
+![alt text](images/image-2.png)
+
+## Componentes de código abierto en HDInsight
+
+Azure HDInsight te permite crear clústeres con **frameworks** de código abierto como Spark, Hive, LLAP, Kafka, Hadoop y HBase. De forma predeterminada, estos clústeres incluyen **componentes** de código abierto como Apache Ambari, Avro, Apache Hive 3, HCatalog, Apache Hadoop MapReduce, Apache Hadoop YARN, Apache Phoenix, Apache Pig, Apache Sqoop, Apache Tez, Apache Oozie y Apache ZooKeeper.
+
+## Lenguajes de programación en HDInsight
+
+Los clústeres de HDInsight, como Spark, HBase, Kafka y Hadoop, soportan varios lenguajes de programación. Algunos lenguajes no vienen instalados por defecto, pero se pueden agregar mediante scripts.
+
+| Lenguaje de programación           | Información                                                             |
+|------------------------------------|-------------------------------------------------------------------------|
+| **Lenguajes soportados por defecto** | HDInsight soporta de forma predeterminada: Java, Python, .NET, Go.        |
+| **Lenguajes basados en JVM**       | Se pueden usar lenguajes como Clojure, Jython (Python para Java) y Scala, pero requieren componentes adicionales. |
+| **Lenguajes específicos de Hadoop** | HDInsight soporta lenguajes como Pig Latin para trabajos de Pig, y HiveQL para trabajos de Hive y SparkSQL. |
+
+## Herramientas de desarrollo para HDInsight
+
+Puedes usar herramientas de desarrollo como IntelliJ, Eclipse, Visual Studio Code y Visual Studio para crear y enviar consultas y trabajos de datos en HDInsight, todo con integración directa en Azure.
+
+- Azure toolkit para IntelliJ 10
+- Azure toolkit para Eclipse 6
+- Herramientas de HDInsight para VS Code 13
+- Herramientas de Azure Data Lake para Visual Studio 9
+
+## Inteligencia empresarial (BI) en HDInsight
+
+Puedes usar herramientas comunes de BI _(Business Intelligence)_, como Power BI y Excel, para trabajar con datos de HDInsight. Estas herramientas se conectan a HDInsight a través de Power Query o el controlador ODBC de Hive, lo que permite visualizar y analizar datos de Apache Spark o Hive.
+
+## Residencia de datos en la región
+
+> Residencia de datos en la región significa que los datos deben almacenarse en una ubicación geográfica específica, como un país o región, para cumplir con regulaciones legales y de privacidad.
+
+- Spark, Hadoop y LLAP no almacenan datos de clientes, por lo que estos servicios cumplen automáticamente con los requisitos de residencia de datos en la región establecidos en el Trust Center.
+
+- Kafka y HBase sí almacenan datos de clientes, pero estos servicios guardan la información en una sola región, cumpliendo también con los requisitos de residencia de datos en la región según el Trust Center.
